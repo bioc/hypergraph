@@ -36,9 +36,7 @@ testHyperedges <- function() {
         hEdges[[i]] <- he
     }
     checkEquals(hEdges, hyperedges(hg))
-    names(eList) <- paste("e", 1:length(eList), sep="")
-    hEdges <- l2hel(eList)
-    checkEquals(names(eList), hyperedgeLabels(hg))
+    checkEquals(as.character(seq_along(eList)), hyperedgeLabels(hg))
 }
 
 
